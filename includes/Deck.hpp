@@ -2,16 +2,20 @@
 # define DECK_HPP
 
 #include "flashcard.hpp"
-#include "Card.hpp"
 
 class Deck
 {
 	private :
-		std::vector<Card> deck;
+		std::vector<Card*> deck;
 
 	public :
-		void	addCard(Card newCard);
+		void	addCard(Card *newCard);
+		void	rmCard(Card *oldCard);
 
-}
+		Card	*getRandCard(void);
+
+		Deck(void);
+		~Deck(void);
+};
 
 #endif

@@ -1,9 +1,16 @@
 CC = c++
 NAME = flashcard
 SRC = sources/main.cpp \
-	sources/Card.cpp
+	sources/parsing.cpp \
+	sources/Card.cpp \
+	sources/Deck.cpp \
+	sources/prompt.cpp \
+	sources/syntax_checker.cpp
+
 HEADER = includes/flashcard.hpp \
-	includes/Card.hpp
+	includes/Card.hpp \
+	includes/Deck.hpp
+
 OBJ=$(SRC:.cpp=.o)
 CFLAGS = -Werror -Wall -Wextra
 
@@ -21,7 +28,7 @@ clean :
 	rm -rf $(OBJ)
 
 run : all
-	@ ./$(NAME) test.fc
+	@ ./$(NAME) capitals/europe.fc ; echo ""
 
 fclean : clean
 	@rm -rf $(NAME)
