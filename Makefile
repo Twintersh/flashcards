@@ -28,7 +28,7 @@ clean :
 	rm -rf $(OBJ)
 
 run : all
-	@ ./$(NAME) capitals/europe.fc ; echo ""
+	@ valgrind ./$(NAME) capitals/africa.fc ; echo ""
 
 fclean : clean
 	@rm -rf $(NAME)

@@ -35,6 +35,10 @@ Card *Deck::getRandCard(void)
 	}
 }
 
-Deck::~Deck(void){}
+Deck::~Deck(void)
+{
+	for (std::vector<Card*>::iterator it = this->deck.begin() ; it != this->deck.end() ; it++)
+		delete *it;
+}
 
 Deck::Deck(void){}

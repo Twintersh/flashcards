@@ -13,6 +13,8 @@ class Deck;
 #include <cstring>
 #include <exception>
 #include <ctime>
+#include <unistd.h>
+#include <stdlib.h>
 #include "Deck.hpp"
 #include "Card.hpp"
 

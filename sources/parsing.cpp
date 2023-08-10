@@ -36,6 +36,10 @@ Deck &parse_infile(std::ifstream &infile, Deck &deck)
 
 	while (std::getline(infile, line, '\n'))
 	{
+		if (!line[0])
+			break;
+		if (line[0] == '#')
+			continue;
 		int i = 0;
 		std::string face1;
 		std::string face2;

@@ -9,7 +9,7 @@ static void replace_chars(std::string &str)
 		str[i] = std::tolower(str[i]);
 		if (str[i] == '-')
 			str[i] = ' ';
-		if (str[i] == -61 && (str[i + 1] == -88 || str[i + 1] == -87 || str[i + 1] == -93))
+		if (str[i] == -61 && (str[i + 1] == -88 || str[i + 1] == -87 || str[i + 1] == -119 || str[i + 1] == -120))
 			str.replace(i, 2, 1, 'e');
 	}
 }
