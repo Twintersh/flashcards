@@ -7,6 +7,11 @@ void Deck::addCard(Card *newCard)
 	this->deck.push_back(newCard);
 }
 
+int Deck::getLen(void)
+{
+	return (this->deck.size());
+}
+
 void Deck::rmCard(Card *oldCard)
 {
 	for (std::vector<Card*>::iterator it = this->deck.begin() ; it != this->deck.end() ; it++)
@@ -34,6 +39,8 @@ Card *Deck::getRandCard(void)
 		return (NULL);
 	}
 }
+
+
 
 Deck::~Deck(void)
 {

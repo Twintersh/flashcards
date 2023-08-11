@@ -2,9 +2,12 @@
 #include "../includes/Card.hpp"
 #include "../includes/Deck.hpp"
 
+bool stop;
+
 int main(int argc, char **argv)
 {
 	srand(time(NULL));
+	stop = false;
 	if (argc != 2)
 	{
 		std::cout << "Wrong usage: This program takes a .fc file as argument." << std::endl;

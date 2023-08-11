@@ -1,7 +1,7 @@
 #ifndef DECK_HPP
 # define DECK_HPP
 
-#include "flashcard.hpp"
+# include "flashcard.hpp"
 
 class Deck
 {
@@ -11,6 +11,8 @@ class Deck
 	public :
 		void	addCard(Card *newCard);
 		void	rmCard(Card *oldCard);
+		void	deleteDeck(int sig);
+		int		getLen(void);
 
 		Card	*getRandCard(void);
 

@@ -2,9 +2,17 @@
 #include "../includes/Card.hpp"
 #include "../includes/Deck.hpp"
 
+void quit(int)
+{
+	stop = true;
+}
+
 void prompt(Deck &deck)
 {
+	Deck revision;
+	signal(SIGINT, &quit);
 	float percent = 0.0f;
+	int nbfaces = deck.getLen();
 	float nb = 0.0f;
 	float good = 0.0f;
 	bool face;
@@ -25,10 +33,11 @@ void prompt(Deck &deck)
 		throw(std::out_of_range("Bad input"));
 
 	// prompt loop
-	while (1)
+	while (!stop)
 	{
 		system("clear");
-		std::cout << BLU "Score: " << percent << "%" NC << std::endl;
+		std::cout << BLU "Score: " << percent << "%" << std::endl;
+		std::cout << MAG << nbfaces - deck.getLen() << "/" << nbfaces << NC << std::endl;
 		std::string answer;
 
 		if (choice == "rand")
@@ -46,13 +55,15 @@ void prompt(Deck &deck)
 		{
 			good++;
 			percent = good / nb * 100.0f;
-			std::cout << GRN "GOOD !" NC << curCard->getElement((face + 1) % 2) << std::endl;
+			std::cout << GRN "GOOD !" NC << std::endl;
 			sleep(1);
 		}
 		else
 		{
+			Card *tmpCard = new Card(curCard->getElement(1), curCard->getElement(0));
+			revision.addCard(tmpCard);
 			percent = good / nb * 100.0f;
-			std::cout << RED "NUL: " NC << curCard->getElement((face + 1) % 2) << BLU " Score: " << percent << "%" NC << std::endl;
+			std::cout << RED "NUL: " NC << curCard->getElement((face + 1) % 2) << NC << std::endl;
 			do{
 				std::cout << "Type correct answer> " << std::flush;
 
@@ -63,5 +74,13 @@ void prompt(Deck &deck)
 		std::cout << std::endl;
 		delete curCard;
 	}
-	std::cout << YEL"END ! final score: " << percent << "%" NC << std::endl;
+	std::cout << YEL "END ! final score: " << percent << "%" NC << std::endl;
+	if (percent != 100.0)
+	{
+		std::cout << "Revise ? (y/n)" << std::endl;
+		getline(std::cin, choice);
+		if (std::cin.eof()) throw(std::out_of_range("Bad input"));
+		else if (choice == "y")
+			prompt(revision);
+	}
 }

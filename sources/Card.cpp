@@ -10,6 +10,8 @@ Card::Card(const std::string ele1, const std::string ele2)
 
 Card::~Card(void){}
 
+
+
 //getters
 std::string Card::getElement(bool face) const
 {
