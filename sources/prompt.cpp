@@ -2,15 +2,9 @@
 #include "../includes/Card.hpp"
 #include "../includes/Deck.hpp"
 
-void quit(int)
-{
-	stop = true;
-}
-
 void prompt(Deck &deck)
 {
 	Deck revision;
-	signal(SIGINT, &quit);
 	float percent = 0.0f;
 	int nbfaces = deck.getLen();
 	float nb = 0.0f;
@@ -33,11 +27,11 @@ void prompt(Deck &deck)
 		throw(std::out_of_range("Bad input"));
 
 	// prompt loop
-	while (!stop)
+	while (1)
 	{
 		system("clear");
 		std::cout << BLU "Score: " << percent << "%" << std::endl;
-		std::cout << MAG << nbfaces - deck.getLen() << "/" << nbfaces << NC << std::endl;
+		std::cout << MAG nbfaces - deck.getLen() << "/" << nbfaces << NC << std::endl;
 		std::string answer;
 
 		if (choice == "rand")
