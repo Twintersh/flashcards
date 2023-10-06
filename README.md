@@ -1,4 +1,4 @@
-# FLASH CARD C++
+# FLASH CARDS C++
 
 <img src="https://schoolhabits.com/wp-content/uploads/2017/01/good-flashcard-scaled-e1639491350119-1024x768.jpeg" style="width:512px;height:384px;">
 
