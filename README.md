@@ -1,5 +1,7 @@
 # FLASH CARD C++
 
+<img src="https://schoolhabits.com/wp-content/uploads/2017/01/good-flashcard-scaled-e1639491350119-1024x768.jpeg" style="width:512px;height:384px;">
+
 ## Purpose of the project
 
 ### This project is about rebuilding a simple flashcard memorization method project.
@@ -8,6 +10,8 @@ This method consists in using simple blank cards to write things you want to mem
 In this project, each flashcard corresponds in one line :\
 `face1 | face2`
 
-To be launched, the program need a path to a .fc file. The files corresponds to a deck. \
-You have 3 exemples files to try with country capitals. \
-This program will stop reading your deck after an empty line. So you can split your file and learn step by step. \
+To be launched, the program need a path to a .fc file. The files corresponds to a deck.
+```
+make && ./flashcard examples/europe_capitals.fc
+```
+This program will stop reading your deck after an empty line. So you can split your file and learn step by step.
