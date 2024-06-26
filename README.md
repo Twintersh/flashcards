@@ -2,7 +2,7 @@
 
 <img src="https://schoolhabits.com/wp-content/uploads/2017/01/good-flashcard-scaled-e1639491350119-1024x768.jpeg" style="width:512px;height:384px;">
 
-Welcome to this Flashcard Memorization Project! This initiative aims to recreate a simple yet effective flashcard memorization method. This classic technique involves using blank cards with information written on each side, providing an efficient way to learn and memorize various topics such as vocabulary, country capitals, or any other subject of interest. With this project, you can easily create a comprehensive deck of flashcards, enabling self-guided learning and personalized study sessions.
+This project aims to recreate a simple yet effective flashcard memorization method. This classic technique involves using blank cards with information written on each side, providing an efficient way to learn and memorize various topics such as vocabulary, country capitals, or any other subject of interest. With this project, you can easily create a comprehensive deck of flashcards, enabling self-guided learning and personalized study sessions.
 
 ## How it Works
 
